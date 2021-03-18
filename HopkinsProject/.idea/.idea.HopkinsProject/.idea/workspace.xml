@@ -11,6 +11,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HungerBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TileData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tile.cs" root0="FORCE_HIGHLIGHTING" />
@@ -22,6 +26,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/TileData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tile.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Creature.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/HungerBar.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Map.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CameraControls.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pdUDi8Nl4iZvgpNnbrJuttycGH" />
@@ -66,7 +74,8 @@
       <updated>1615512342443</updated>
       <workItem from="1615512348217" duration="674000" />
       <workItem from="1615517186723" duration="2356000" />
-      <workItem from="1615746744734" duration="4975000" />
+      <workItem from="1615746744734" duration="8105000" />
+      <workItem from="1616044011002" duration="2580000" />
     </task>
     <servers />
   </component>

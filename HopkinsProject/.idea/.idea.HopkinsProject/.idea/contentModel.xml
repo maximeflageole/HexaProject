@@ -12,7 +12,11 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="CameraControls.cs" t="Include" />
+          <e p="Creature.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="HungerBar.cs" t="Include" />
+          <e p="Map.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Tile.cs" t="Include" />
           <e p="TileData.cs" t="Include" />
