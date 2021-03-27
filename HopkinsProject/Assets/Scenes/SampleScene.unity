@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.5383505, g: 0.547203, b: 0.56764895, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -861,9 +861,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecea3b2537056b344b1bffe506c5ac6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_tileData: {fileID: 0}
-  m_tileGridPrefab: {fileID: 6193331833806712650, guid: 643787a48e77bb2458320c881e90add5, type: 3}
-  m_gridLayers: 3
+  m_hexGridPrefab: {fileID: 6193331833806712650, guid: 643787a48e77bb2458320c881e90add5, type: 3}
+  m_tileData: {fileID: 11400000, guid: 4436cfe43e417d641acc84e92d8ddc07, type: 2}
+  m_mapLayers: 3
 --- !u!4 &368256846
 Transform:
   m_ObjectHideFlags: 0

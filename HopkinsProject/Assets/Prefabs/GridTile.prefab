@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6193331833806712653}
+  - component: {fileID: -1873972364691894257}
   m_Layer: 0
   m_Name: GridTile
   m_TagString: Untagged
@@ -31,6 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1873972364691894257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6193331833806712650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14226ab5f1e25e4f82e00ce93515a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_coordinates: {x: 0, y: 0}
+  m_displayed: 0
 --- !u!1 &6193331834276836515
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,6 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6193331834162180438}
   - component: {fileID: 6193331834276836514}
+  - component: {fileID: 8919809438483858912}
   m_Layer: 0
   m_Name: GridTile
   m_TagString: Untagged
@@ -113,3 +129,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &8919809438483858912
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6193331834276836515}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 4.9454803, y: -0.0502184}
+  - {x: 2.4483962, y: 4.1400986}
+  - {x: -2.414583, y: 4.2047324}
+  - {x: -4.8179836, y: -0.011058331}
+  - {x: -2.3719127, y: -4.188776}
+  - {x: 2.3525681, y: -4.107877}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
