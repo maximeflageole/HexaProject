@@ -861,7 +861,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecea3b2537056b344b1bffe506c5ac6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileData: {fileID: 11400000, guid: d32079c6e923e4b4399581755331462e, type: 2}
+  m_tileData: {fileID: 0}
+  m_tileGridPrefab: {fileID: 6193331833806712650, guid: 643787a48e77bb2458320c881e90add5, type: 3}
+  m_gridLayers: 3
 --- !u!4 &368256846
 Transform:
   m_ObjectHideFlags: 0
@@ -870,7 +872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368256844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 149.5, y: 586, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

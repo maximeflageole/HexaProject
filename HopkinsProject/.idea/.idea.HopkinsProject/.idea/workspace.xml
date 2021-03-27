@@ -16,8 +16,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Creature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../TurquoiseFlavour/Turquoise Flavour/Assets/Scripts/Piles/Pile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../TurquoiseFlavour/Turquoise Flavour/Assets/Scripts/Deck.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TileData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../TurquoiseFlavour/Turquoise Flavour/Assets/CardGameUIEffects/Assets/Scripts/CardEffects.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -25,11 +28,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TileData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Creature.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HungerBar.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Map.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraControls.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tile.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Map.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pdUDi8Nl4iZvgpNnbrJuttycGH" />
@@ -75,7 +78,8 @@
       <workItem from="1615512348217" duration="674000" />
       <workItem from="1615517186723" duration="2356000" />
       <workItem from="1615746744734" duration="8105000" />
-      <workItem from="1616044011002" duration="2580000" />
+      <workItem from="1616044011002" duration="3206000" />
+      <workItem from="1616170442839" duration="4638000" />
     </task>
     <servers />
   </component>
