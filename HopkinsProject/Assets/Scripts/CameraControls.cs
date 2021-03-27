@@ -19,7 +19,7 @@ public class CameraControls : MonoBehaviour
         var frameSpeed = m_translateSpeed * Time.deltaTime * m_camera.orthographicSize;
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
-        transform.Translate(new Vector3(horizontal * frameSpeed, 0, vertical * frameSpeed), Space.World);
+        transform.Translate(new Vector3(horizontal * frameSpeed, vertical * frameSpeed, 0), Space.World);
 
         if (m_camera)
         {

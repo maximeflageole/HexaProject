@@ -4,9 +4,17 @@ public class HexTile : MonoBehaviour
 {
     public Vector2Int m_coordinates;
     public bool m_displayed;
+    public Tile m_childTile;
 
-    void OnMouseOver2D()
+    private void OnMouseEnter()
     {
-        Debug.Log("Mouse over me");
+        //Display
+        Debug.Log("Mouse entered");
+    }
+
+    private void OnMouseDown()
+    {
+        //Build a tile
+        GameManager.GetInstance().m_map.CreateTile(this);
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,12 +29,21 @@ public class Map : MonoBehaviour
                     continue;
                 }
                 var xTranslation = new Vector3(j, 0, 0);
-                var yTranslation = new Vector3(k/2.0f, 0, -k * yValue);
+                var yTranslation = new Vector3(k/2.0f, -k * yValue, 0);
                 var position = xTranslation + yTranslation;
-                var hexTile = Instantiate(m_hexGridPrefab, position, Quaternion.identity, transform).GetComponent<HexTile>();
+                var hexTile = Instantiate(m_hexGridPrefab, position, Quaternion.identity, transform).GetComponentInChildren<HexTile>();
                 hexTile.m_coordinates = new Vector2Int(j, k);
             }
         }
+    }
+
+    public void CreateTile(HexTile parent)
+    {
+        if (parent.m_childTile != null)
+        {
+            return;
+        }
+        Instantiate(m_tileData.Prefab, parent.transform.position + new Vector3(0, 0, -0.1f), Quaternion.LookRotation(Vector3.up, Vector3.forward), parent.transform);
     }
 
     public void CreateTile(Vector2Int position, TileData tileData)
@@ -51,7 +59,7 @@ public class Map : MonoBehaviour
 
     private Vector3 GetPositionFromGridCoordinates(Vector2Int gridCoordinates)
     {
-        Vector3 coordinates = new Vector3(gridCoordinates.x, 0.0f, gridCoordinates.y * yValue);
+        Vector3 coordinates = new Vector3(gridCoordinates.x, gridCoordinates.y * yValue, 0.0f);
         if (gridCoordinates.y % 2 == 0)
         {
             return coordinates;

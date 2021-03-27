@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Map m_map;
+
     private static GameManager _INSTANCE;
     
     public static GameManager GetInstance()
