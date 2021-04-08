@@ -3,12 +3,22 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
+    protected Dictionary<Vector2Int, GameObject> m_tileGrid = new Dictionary<Vector2Int, GameObject>();
     protected Dictionary<Vector2Int, Tile> m_tilesDictionary = new Dictionary<Vector2Int, Tile>();
     protected Vector3 m_oddTileOffset;
     [SerializeField] private GameObject m_hexGridPrefab;
     [SerializeField] private TileData m_tileData;
     [SerializeField] private int m_mapLayers;
     protected float yValue;
+    protected List<Vector2Int> m_adjacentCoordinates = new List<Vector2Int>()
+    {
+        new Vector2Int(0, -1),
+        new Vector2Int(-1, 0),
+        new Vector2Int(-1, +1),
+        new Vector2Int(0, +1),
+        new Vector2Int(+1, 0),
+        new Vector2Int(+1, -1)
+    };
     
     private void Awake()
     {
@@ -28,13 +38,31 @@ public class Map : MonoBehaviour
                 {
                     continue;
                 }
-                var xTranslation = new Vector3(j, 0, 0);
-                var yTranslation = new Vector3(k/2.0f, -k * yValue, 0);
-                var position = xTranslation + yTranslation;
-                var hexTile = Instantiate(m_hexGridPrefab, position, Quaternion.identity, transform).GetComponentInChildren<HexTile>();
-                hexTile.m_coordinates = new Vector2Int(j, k);
+                PlaceHexTile(new Vector2Int(j, k));
             }
         }
+    }
+
+    private void GenerateHexGridAround(Vector2Int coordinates)
+    {
+        foreach (var value in m_adjacentCoordinates)
+        {
+            var calcCoordinates = coordinates + value;
+            if (!m_tileGrid.ContainsKey(coordinates + value))
+            {
+                PlaceHexTile(calcCoordinates);
+            }
+        }
+    }
+
+    private void PlaceHexTile(Vector2Int coordinates)
+    {
+        var xTranslation = new Vector3(coordinates.x, 0, 0);
+        var yTranslation = new Vector3(coordinates.y / 2.0f, -coordinates.y * yValue, 0);
+        var position = xTranslation + yTranslation;
+        var hexTile = Instantiate(m_hexGridPrefab, position, Quaternion.identity, transform).GetComponentInChildren<HexTile>();
+        hexTile.m_coordinates = coordinates;
+        m_tileGrid.Add(coordinates, hexTile.gameObject);
     }
 
     public void CreateTile(HexTile parent)
@@ -44,6 +72,7 @@ public class Map : MonoBehaviour
             return;
         }
         Instantiate(m_tileData.Prefab, parent.transform.position + new Vector3(0, 0, -0.1f), Quaternion.LookRotation(Vector3.up, Vector3.forward), parent.transform);
+        GenerateHexGridAround(parent.m_coordinates);
     }
 
     public void CreateTile(Vector2Int position, TileData tileData)
