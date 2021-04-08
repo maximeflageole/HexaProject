@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    protected Dictionary<Vector2Int, GameObject> m_tileGrid = new Dictionary<Vector2Int, GameObject>();
+    protected Dictionary<Vector2Int, HexTile> m_tileGrid = new Dictionary<Vector2Int, HexTile>();
     protected Dictionary<Vector2Int, Tile> m_tilesDictionary = new Dictionary<Vector2Int, Tile>();
     protected Vector3 m_oddTileOffset;
     [SerializeField] private GameObject m_hexGridPrefab;
@@ -62,16 +62,17 @@ public class Map : MonoBehaviour
         var position = xTranslation + yTranslation;
         var hexTile = Instantiate(m_hexGridPrefab, position, Quaternion.identity, transform).GetComponentInChildren<HexTile>();
         hexTile.m_coordinates = coordinates;
-        m_tileGrid.Add(coordinates, hexTile.gameObject);
+        m_tileGrid.Add(coordinates, hexTile);
     }
 
     public void CreateTile(HexTile parent)
     {
-        if (parent.m_childTile != null)
+        if (!parent.CanSpawnTile())
         {
             return;
         }
-        Instantiate(m_tileData.Prefab, parent.transform.position + new Vector3(0, 0, -0.1f), Quaternion.LookRotation(Vector3.up, Vector3.forward), parent.transform);
+        var tile = Instantiate(m_tileData.Prefab, parent.transform.position + new Vector3(0, 0, -0.1f), Quaternion.LookRotation(Vector3.up, Vector3.forward), parent.transform).GetComponent<Tile>();
+        parent.m_childTile = tile;
         GenerateHexGridAround(parent.m_coordinates);
     }
 

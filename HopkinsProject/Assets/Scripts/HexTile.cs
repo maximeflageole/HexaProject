@@ -17,4 +17,9 @@ public class HexTile : MonoBehaviour
         //Build a tile
         GameManager.GetInstance().m_map.CreateTile(this);
     }
+
+    public bool CanSpawnTile()
+    {
+        return m_childTile == null;
+    }
 }
