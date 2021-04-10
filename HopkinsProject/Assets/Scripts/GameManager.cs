@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Map m_map;
+    public TileCard SelectedCard { get; private set; }
 
     private static GameManager _INSTANCE;
     
@@ -49,5 +50,24 @@ public class GameManager : MonoBehaviour
     public void AddSeeds(int amount = 1)
     {
         m_seedsAmount += amount;
+    }
+
+    public void SelectCard(TileCard card)
+    {
+        if (SelectedCard != null)
+        {
+            if (SelectedCard == card)
+            {
+                return;
+            }
+            SelectedCard.Select(false);
+        }
+        SelectedCard = card;
+    }
+
+    public void PlaceCard(TileCard card)
+    {
+        card.Remove();
+        SelectedCard = null;
     }
 }

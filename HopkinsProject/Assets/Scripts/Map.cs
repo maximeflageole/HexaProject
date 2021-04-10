@@ -65,15 +65,20 @@ public class Map : MonoBehaviour
         m_tileGrid.Add(coordinates, hexTile);
     }
 
-    public void CreateTile(HexTile parent)
+    public void PlaceTile(HexTile parent, TileCard selectedCard)
     {
         if (!parent.CanSpawnTile())
         {
             return;
         }
-        var tile = Instantiate(m_tileData.Prefab, parent.transform.position + new Vector3(0, 0, -0.1f), Quaternion.LookRotation(Vector3.up, Vector3.forward), parent.transform).GetComponent<Tile>();
+        if (selectedCard == null)
+        {
+            return;
+        }
+        var tile = Instantiate(selectedCard.GetTileData().Prefab, parent.transform.position + new Vector3(0, 0, -0.1f), Quaternion.LookRotation(Vector3.up, Vector3.forward), parent.transform).GetComponent<Tile>();
         parent.m_childTile = tile;
         GenerateHexGridAround(parent.m_coordinates);
+        GameManager.GetInstance().PlaceCard(selectedCard);
     }
 
     public void CreateTile(Vector2Int position, TileData tileData)

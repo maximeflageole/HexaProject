@@ -15,7 +15,7 @@ public class HexTile : MonoBehaviour
     private void OnMouseDown()
     {
         //Build a tile
-        GameManager.GetInstance().m_map.CreateTile(this);
+        GameManager.GetInstance().m_map.PlaceTile(this, GameManager.GetInstance().SelectedCard);
     }
 
     public bool CanSpawnTile()
