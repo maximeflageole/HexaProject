@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour
 {
     public Map m_map;
     public TileCard SelectedCard { get; private set; }
+    public Pile m_pile;
+    public LevelData m_levelData;
+    public TileCard m_tileCardPrefab;
 
     private static GameManager _INSTANCE;
     
@@ -39,12 +42,27 @@ public class GameManager : MonoBehaviour
         }
 
         _INSTANCE = this;
+        GeneratePile();
     }
 
     // Update is called once per frame
     void Update()
     {
         m_seedsTMPro.text = m_seedsAmount.ToString();
+    }
+
+    void GeneratePile()
+    {
+        foreach (var tileType in m_levelData.TileData)
+        {
+            for (var i = 0; i < tileType.Amount; i++)
+            {
+                var tileCard = Instantiate(m_tileCardPrefab, m_pile.transform).GetComponent<TileCard>();
+                tileCard.Instantiate(tileType.TileData);
+                m_pile.Enqueue(tileCard);
+            }
+        }
+        m_pile.ShufflePile();
     }
 
     public void AddSeeds(int amount = 1)

@@ -8,6 +8,7 @@ public class TileData : ScriptableObject
     public ETileColor TileColor = ETileColor.Count;
     public ETileType TileType = ETileType.Count;
     public float ProductionMultiplier = 1.0f;
+    public ETileRarity TileRarity = ETileRarity.Count;
 }
 
 public enum ETileColor
@@ -40,5 +41,14 @@ public enum ETileType
     VolcanoActive,
     Jungle,
     Dump,
+    Count
+}
+
+public enum ETileRarity
+{
+    Common,
+    Rare,
+    Epic,
+    Legendary,
     Count
 }

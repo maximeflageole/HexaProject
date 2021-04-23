@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,7 +6,18 @@ public class TileCard : MonoBehaviour
 {
     [SerializeField] private TileData m_tileData;
     [SerializeField] private Image m_borderSprite;
+    [SerializeField] private Image m_tileImage;
+    [SerializeField] private Image m_rarityImage;
+    [SerializeField] private TextMeshProUGUI m_tileType;
+    [SerializeField] private Image m_cardBackground;
+    [SerializeField] private TextMeshProUGUI m_tileCost;
+
     private bool m_selected;
+
+    public void Instantiate(TileData tileData)
+    {
+        m_tileData = tileData;
+    }
 
     public void OnClick()
     {

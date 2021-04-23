@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62671dfe527aecf40b52761de8ee821a, type: 3}
   m_Name: Jungle
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300044, guid: ac1645b9b895a8c4a9f8d5b744dcf28b, type: 3}
-  Prefab: {fileID: 1684324359988056, guid: e451c469d5daa4e46aac7a3b9de0c3a4, type: 3}
+  Sprite: {fileID: 21300004, guid: ac1645b9b895a8c4a9f8d5b744dcf28b, type: 3}
+  Prefab: {fileID: 1535652536708680, guid: 2ee43f6acf07a194eb588a7dd5bc1c5b, type: 3}
+  TileColor: 4
+  TileType: 11
+  ProductionMultiplier: 1
+  TileRarity: 2
