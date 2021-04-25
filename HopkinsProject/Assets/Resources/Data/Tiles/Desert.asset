@@ -17,3 +17,5 @@ MonoBehaviour:
   TileColor: 4
   TileType: 3
   ProductionMultiplier: 1
+  TileRarity: 0
+  TileCost: 10

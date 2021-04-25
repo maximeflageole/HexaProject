@@ -1495,6 +1495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_map: {fileID: 368256845}
+  m_dataDictionaries: {fileID: 11400000, guid: 23a04fcf05c545947bafd22569d793df, type: 2}
   m_pile: {fileID: 1441912842}
   m_levelData: {fileID: 11400000, guid: 20f10076d250af64bb63c8afcbefea6f, type: 2}
   m_tileCardPrefab: {fileID: 7292282791829513587, guid: a30d0e32025278043ac6749d3882aa71, type: 3}

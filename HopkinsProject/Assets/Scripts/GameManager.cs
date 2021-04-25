@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public Map m_map;
     public TileCard SelectedCard { get; private set; }
+    public DataDictionaries m_dataDictionaries;
     public Pile m_pile;
     public LevelData m_levelData;
     public TileCard m_tileCardPrefab;
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
     private int m_seedsAmount;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (_INSTANCE != null && _INSTANCE != this)
         {

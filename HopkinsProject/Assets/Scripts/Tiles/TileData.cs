@@ -9,6 +9,7 @@ public class TileData : ScriptableObject
     public ETileType TileType = ETileType.Count;
     public float ProductionMultiplier = 1.0f;
     public ETileRarity TileRarity = ETileRarity.Count;
+    public int TileCost = 10;
 }
 
 public enum ETileColor

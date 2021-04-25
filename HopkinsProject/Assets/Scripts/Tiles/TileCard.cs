@@ -17,6 +17,12 @@ public class TileCard : MonoBehaviour
     public void Instantiate(TileData tileData)
     {
         m_tileData = tileData;
+        m_tileImage.sprite = tileData.Sprite;
+        var dataDict = GameManager.GetInstance().m_dataDictionaries;
+        m_rarityImage.sprite = dataDict.GetRaritySprite(tileData.TileRarity);
+        m_cardBackground.color = dataDict.GetColorFromTileColor(tileData.TileColor);
+        m_tileType.text = tileData.TileType.ToString();
+        m_tileCost.text = tileData.TileCost.ToString();
     }
 
     public void OnClick()
