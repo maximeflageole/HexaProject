@@ -79,17 +79,7 @@ public class Map : MonoBehaviour
         parent.m_childTile = tile;
         GenerateHexGridAround(parent.m_coordinates);
         GameManager.GetInstance().PlaceCard(selectedCard);
-    }
-
-    public void CreateTile(Vector2Int position, TileData tileData)
-    {
-        if (m_tilesDictionary.ContainsKey(position))
-        {
-            return;
-        }
-
-        var go = Instantiate(tileData.Prefab, GetPositionFromGridCoordinates(position), Quaternion.identity);
-        go.GetComponent<Tile>().Instantiation(position);
+        tile.Instantiation(parent.m_coordinates, selectedCard.GetTileData());
     }
 
     private Vector3 GetPositionFromGridCoordinates(Vector2Int gridCoordinates)

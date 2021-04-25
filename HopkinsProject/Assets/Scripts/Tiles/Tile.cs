@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    [SerializeField] protected FloatingText m_resourceGainText;
     [SerializeField] protected float m_productionBaseTime = 5.0f;
     
     protected float m_currentTimer = 0.0f;
 
     [SerializeField] protected Vector2Int m_coordinates;
+    public TileData TileData { get; protected set; }
 
-    public void Instantiation(Vector2Int coordinates)
+    public void Instantiation(Vector2Int coordinates, TileData tileData)
     {
+        TileData = tileData;
         m_coordinates = coordinates;
     }
     
@@ -23,6 +24,7 @@ public class Tile : MonoBehaviour
         {
             m_currentTimer %= m_productionBaseTime;
             GameManager.GetInstance().AddSeeds();
+            m_resourceGainText.Init(TileData.ProductionMultiplier.ToString(), false, 1);
         }
     }
 }
